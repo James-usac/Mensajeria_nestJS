@@ -72,6 +72,9 @@ $ nest generate controller <name> [options]
 
 #class
 $ nest generate class <name> [options]
+
+#service
+$ nest g service <name> [options]
 ```
 
 ## MySQL connector 
