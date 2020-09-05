@@ -10,7 +10,7 @@ export class MensajesController {
 
     }
 
-    @Post()
+    @Post('')
     create(@Body() createMensajesDto: CreateMensajeDto, @Res() response){
         this.mensajeService.createMensaje(createMensajesDto).then(
             mensaje => {
