@@ -9,6 +9,9 @@ import { CatsController } from './cats/cats.controller';
 import { GoogleStrategy } from './google.strategy'
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { ComentariosController } from './comentarios/comentarios.controller';
+import { ComentariosService } from './comentarios/comentarios.service';
+import { Comentarios } from './mensajes/entities/comentarios.entity';
 
 @Module({
   imports: [
@@ -24,9 +27,10 @@ import { UsersModule } from './users/users.module';
     }),
     TypeOrmModule.forFeature([Mensaje]),
     AuthModule,
+    TypeOrmModule.forFeature([Comentarios]),
     UsersModule//inyectado la clase mensaje
   ],
-  controllers: [AppController, MensajesController, CatsController],
-  providers: [AppService, MensajesService, GoogleStrategy],
+  controllers: [AppController, MensajesController, CatsController, ComentariosController],
+  providers: [AppService, MensajesService, GoogleStrategy, ComentariosService],
 })
 export class AppModule {}

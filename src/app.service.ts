@@ -1,7 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import { HttpAdapterHost } from '@nestjs/core';
 
 @Injectable()
 export class AppService {
+  constructor(private adapterHost: HttpAdapterHost) {
+  
+  }
+  
   googleLogin(req) {
     if (!req.user) {
       return 'No user from google'
