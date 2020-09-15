@@ -21,6 +21,8 @@ export class ComentariosController {
 
     @Get()
     getAll(@Res() response){
+        response.header("Access-Control-Allow-Origin", "*")
+        response.header('Access-Control-Allow-Headers', "Origin, X-Requested-with, content-type, Accept")
         this.comentarioService.getAll().then(
             mensajeList => {
                 response.status(HttpStatus.OK).json(mensajeList)
